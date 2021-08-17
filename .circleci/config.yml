@@ -11,10 +11,10 @@ jobs:
     docker:
       - image: cimg/node:14.17.3
     steps:
-      - checkout:
+      - checkout
       - run:
-      name: install dependencies
-      command: npm run test
+        name: install dependencies
+        command: npm run test
 
   build:
     docker:
