@@ -1,7 +1,7 @@
 version: 2.1
 
 workflows:
-  version: 1
+  version: 2
   build-test-and-deploy:
     jobs:
       - test
@@ -13,8 +13,12 @@ jobs:
     steps:
       - checkout
       - run:
-        name: install dependencies
-        command: npm run test
+          name: install dependencies
+          command: npm install
+      - run:
+          name: tests
+          command: npm run test    
+
 
   build:
     docker:
@@ -22,5 +26,5 @@ jobs:
     steps:
       - checkout
       - run:
-        name: build
-        command: npm run build       
+          name: build
+          command: npm run build       
