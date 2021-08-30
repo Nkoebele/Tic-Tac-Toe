@@ -12,7 +12,7 @@ workflows:
             - test
       - heroku/deploy-via-git:
           requires:
-            -build
+            - build
           filters:
             branches:
               only: main
